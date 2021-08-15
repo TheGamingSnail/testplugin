@@ -38,9 +38,9 @@ class Main extends PluginBase {
               $msg = new Message();
               $embed = new Embed();
               $embed->setTitle("New Player Reported");
-              $embed->addField("Name:", $data[0]);
-              $embed->addField("Reason:", $data[1]);
-              $embed->addField("Reporter:", $player->getName());
+              $embed->addField("Name", $data[0]);
+              $embed->addField("Reason", $data[1]);
+              $embed->addField("Reporter", $player->getName());
               $embed->setFooter("Hmmmmm");
               $msg->addEmbed($embed);
               $webhook->send($msg);
