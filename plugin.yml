@@ -1,0 +1,9 @@
+name: ReportUI
+main: GamingSnail7410\ReportUi\Main
+author: TheGamingSnail
+api: 3.0.0
+version: 1.0
+
+commands:
+  report:
+    description: "Open The Player Reporting Form"
