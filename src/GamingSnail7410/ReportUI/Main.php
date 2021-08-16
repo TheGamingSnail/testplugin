@@ -44,8 +44,10 @@ class Main extends PluginBase {
               }
               $player->sendMessage("Report Sent!");
               foreach($this->getServer()->getOnlinePlayers() as $p){
-                  if($p->hasPermission("reportui.staff"))
+                  if($p->hasPermission("reportui.staff")){
                       $p->sendMessage("New Report Has Been Sent\nName: " . $data[0] . "\nReason: " . $data[1] . "\nReporter: " . $player->getName() . "\nBan?");        
+                  }
+                 
               }
 // Construct a discord webhook with its URL
               $webHook = new Webhook("https://discord.com/api/webhooks/876598099429187584/wkKXKbe2io90sGUYpdIPZebpec9qvWfpCm16XAUWXJWeYvp3bwtOl8cNRbnCaWEf1_lW");
