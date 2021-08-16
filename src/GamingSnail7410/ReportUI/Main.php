@@ -43,26 +43,26 @@ class Main extends PluginBase {
                   return true;
               }
               $player->sendMessage("Report Sent!");
-              foreach($this->getServer()->getOnlinePlayers() as $p){
+              foreach($this->getServer->getOnlinePlayers() as $p){
                   if($p->hasPermission("reportui.staff"))
                       $p->sendMessage("New Report Has Been Sent\nName: " . $data[0] . "\nReason: " . $data[1] . "\nReporter: " . $player->getName() . "\nBan?");        
               }
-              $webhook = new Webhook("https://discord.com/api/webhooks/876598099429187584/wkKXKbe2io90sGUYpdIPZebpec9qvWfpCm16XAUWXJWeYvp3bwtOl8cNRbnCaWEf1_lW");
+              $webHook = new Webhook("https://discord.com/api/webhooks/876598099429187584/wkKXKbe2io90sGUYpdIPZebpec9qvWfpCm16XAUWXJWeYvp3bwtOl8cNRbnCaWEf1_lW");
               $msg = new Message();
               $embed = new Embed();
               $embed->setTitle("New Player Reported");
               $embed->addField("Name", $data[0]);
               $embed->addField("Reason", $data[1]);
               $embed->addField("Reporter", $player->getName());
-              $embed->setFooter("Hmmmmm");
+              $embed->setFooter("Ban?");
               $msg->addEmbed($embed);
-              $webhook->send($msg);
-            });
-            $form->setTitle("Report A Player");
-            $form->addInput("Type In A Player Name");
-            $form->addInput("Type In The Reason Of The Report");
-            $form->sendToPlayer($player);
-            return $form;
+              $webHook->send($msg);
+          });
+           $form->setTitle("Report A Player");
+           $form->addInput("Type In A Player Name");
+           $form->addInput("Type In The Reason Of The Report");
+           $form->sendToPlayer($player);
+           return $form;
       }
 
 }
