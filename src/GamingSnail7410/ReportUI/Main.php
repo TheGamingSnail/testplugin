@@ -43,7 +43,7 @@ class Main extends PluginBase {
                   return true;
               }
               $player->sendMessage("Report Sent!");
-              foreach($this->getServer->getOnlinePlayers() as $p){
+              foreach($this->getServer()->getOnlinePlayers() as $p){
                   if($p->hasPermission("reportui.staff"))
                       $p->sendMessage("New Report Has Been Sent\nName: " . $data[0] . "\nReason: " . $data[1] . "\nReporter: " . $player->getName() . "\nBan?");        
               }
