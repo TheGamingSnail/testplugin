@@ -34,6 +34,19 @@ class Main extends PluginBase {
               if($data === null){
                   return true;
               }
+              if($data[0] == null){
+                  $player->sendMessage("§4Please Type The Name OF The Player You Want To Report");
+                  return true;
+              }
+              if($data[1] == null){
+                  $player->sendMessage("§4Please Type The Reason Of The Report");
+                  return true;
+              }
+              $player->sendMessage("Report Sent!");
+              foreach($this->getServer->getOnlinePlayers() as $p){
+                  if($p->hasPermission("reportui.staff"))
+                      $p->sendMessage("New Report Has Been Sent\nName: " . $data[0] . "\nReason: " . $data[1] . "\nReporter: " . $player->getName() . "\nBan?");        
+              }
               $webhook = new Webhook("https://discord.com/api/webhooks/876598099429187584/wkKXKbe2io90sGUYpdIPZebpec9qvWfpCm16XAUWXJWeYvp3bwtOl8cNRbnCaWEf1_lW");
               $msg = new Message();
               $embed = new Embed();
@@ -50,6 +63,6 @@ class Main extends PluginBase {
             $form->addInput("Type In The Reason Of The Report");
             $form->sendToPlayer($player);
             return $form;
-          }
+      }
 
 }
