@@ -47,16 +47,41 @@ class Main extends PluginBase {
                   if($p->hasPermission("reportui.staff"))
                       $p->sendMessage("New Report Has Been Sent\nName: " . $data[0] . "\nReason: " . $data[1] . "\nReporter: " . $player->getName() . "\nBan?");        
               }
-              $webHook = new Webhook("https://discord.com/api/webhooks/876598099429187584/wkKXKbe2io90sGUYpdIPZebpec9qvWfpCm16XAUWXJWeYvp3bwtOl8cNRbnCaWEf1_lW");
-              $msg = new Message();
-              $embed = new Embed();
-              $embed->setTitle("New Player Reported");
-              $embed->addField("Name", $data[0]);
-              $embed->addField("Reason", $data[1]);
-              $embed->addField("Reporter", $player->getName());
-              $embed->setFooter("Ban?");
-              $msg->addEmbed($embed);
-              $webHook->send($msg);
+// Construct a discord webhook with its URL
+$webHook = new Webhook("YOUR WEBHOOK URL");
+
+// Construct a new Message object
+$msg = new Message();
+
+$msg->setUsername("USERNAME");
+$msg->setAvatarURL("https://cortexpe.xyz/utils/kitsu.png");
+$msg->setContent("INSERT TEXT HERE");
+
+// Create an embed object with #FF0000 (RED) as the embed's color and "EMBED 1" as the title
+$embed = new Embed();
+$embed->setTitle("EMBED 1");
+$embed->setColor(0xFF0000);
+$msg->addEmbed($embed);
+
+$embed = new Embed();
+$embed->setTitle("EMBED 2");
+$embed->setColor(0x00FF00);
+$embed->setAuthor("AUTHOR", "https://CortexPE.xyz", "https://cortexpe.xyz/utils/kitsu.png");
+$embed->setDescription("Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+$msg->addEmbed($embed);
+
+$embed = new Embed();
+$embed->setTitle("EMBED 3");
+$embed->setColor(0x0000FF);
+$embed->addField("FIELD ONE", "Some text here");
+$embed->addField("FIELD TWO", "Some text here", true);
+$embed->addField("FIELD THREE", "Some text here", true);
+$embed->setThumbnail("https://cortexpe.xyz/utils/kitsu.png");
+$embed->setImage("https://cortexpe.xyz/utils/kitsu.png");
+$embed->setFooter("Erin is kawaii UwU","https://cortexpe.xyz/utils/kitsu.png");
+$msg->addEmbed($embed);
+
+$webHook->send($msg);
           });
            $form->setTitle("Report A Player");
            $form->addInput("Type In A Player Name");
