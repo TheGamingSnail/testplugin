@@ -48,7 +48,7 @@ class Main extends PluginBase {
                   }
                  
               }
-              $webhook = new Webhook("https://discord.com/api/webhooks/876598099429187584/wkKXKbe2io90sGUYpdIPZebpec9qvWfpCm16XAUWXJWeYvp3bwtOl8cNRbnCaWEf1_lW");
+              $webhook = new Webhook("https://discord.com/api/webhooks/878245931160576110/magIbKDn01_S9RSerLImCRVfJwYGOdgoaDPYUtM32EK75aUqRn-RXJGACYfhr_1SQk2E");
               $msg = new Message();
               $embed = new Embed();
               $embed->setTitle("New report has been sent");
