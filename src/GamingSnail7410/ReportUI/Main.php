@@ -1,6 +1,6 @@
 <?php
 
-namespace PlateWheel\ReportUI;
+namespace GamingSnail7410\ReportUI;
 
 use pocketmine\Server;
 use pocketmine\Player;
