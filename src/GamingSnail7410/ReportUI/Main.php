@@ -4,7 +4,6 @@ namespace GamingSnail7410\ReportUI;
 
 use pocketmine\Server;
 use pocketmine\Player;
-
 use pocketmine\plugin\PluginBase;
 
 use pocketmine\command\Command;
