@@ -48,16 +48,16 @@ class Main extends PluginBase {
                   }
                  
               }
-              $webhook = new Webhook("https://discord.com/api/webhooks/878245931160576110/magIbKDn01_S9RSerLImCRVfJwYGOdgoaDPYUtM32EK75aUqRn-RXJGACYfhr_1SQk2E");
-              $msg = new Message();
-              $embed = new Embed();
-              $embed->setTitle("New report has been sent");
-              $embed->addField("Name:", $data[0]);
-              $embed->addField("Reason:", $data[1]);
-              $embed->addField("Reporter:", $player->getName());
-              $embed->setFooter("Punish?");
-              $msg->addEmbed($embed);
-              $webhook->send($msg);
+$webhook = new Webhook("https://discord.com/api/webhooks/876598099429187584/wkKXKbe2io90sGUYpdIPZebpec9qvWfpCm16XAUWXJWeYvp3bwtOl8cNRbnCaWEf1_lW");
+            $msg = new Message();
+            $embed = new Embed();
+            $embed->setTitle("New report has been sent");
+            $embed->addField("Name:", $data[0]);
+            $embed->addField("Reason:", $data[1]);
+            $embed->addField("Reporter:", $player->getName());
+            $embed->setFooter("Punish?");
+            $msg->addEmbed($embed);
+            $webhook->send($msg);
           });
            $form->setTitle("Report A Player");
            $form->addInput("Type In A Player Name");
