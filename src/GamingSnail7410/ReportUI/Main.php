@@ -72,7 +72,7 @@ class Main extends PluginBase {
             $webhook->send($msg);
 		});
 		$form->setTitle("ReportUI");
-		$form->addInput("Type a player name you want to report", "Eg: GamingSnail7410";
+		$form->addInput("Type a player name you want to report", "Eg: GamingSnail7410");
 		$form->addInput("Type a reason why you report", "Eg: Kill Aura");
 		$form->sendToPlayer($player);
 		return $form;
